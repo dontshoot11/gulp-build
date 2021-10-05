@@ -1,0 +1,23 @@
+version: '3.1'
+services: 
+  signals-lands:
+    image: nginx:alpine
+    logging:
+      options:
+        max-size: "1024k"
+        max-file: "3"
+    container_name: signals-lands
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "8081:80"
+    volumes:
+      - ./build:/var/www # serve static
+      - ./config/nginx/conf.d/:/etc/nginx/conf.d/
+    hostname: lands.localhost
+    networks:
+      signals-app-network:    
+#Docker Networks
+networks:
+  signals-app-network:
+    driver: bridge
