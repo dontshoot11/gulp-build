@@ -15,13 +15,7 @@ module.exports = function () {
                 )
                 // .pipe($.gp.csso())
                 .pipe(sass({ outputStyle: 'expanded' }))
-                .pipe(
-                    $.gp.autoprefixer({
-                        browsers: ['last 10 versions'],
-                    })
-                )
-                // .pipe($.gp.sourcemaps.write('./'))
-                .pipe($.gulp.dest('build/css/'))
+                .pipe($.gp.autoprefixer())
                 // Минифицированная версия
                 .pipe(sass({ outputStyle: 'compressed' }))
                 .pipe($.gp.rename('main.min.css'))
@@ -29,9 +23,5 @@ module.exports = function () {
                 .pipe($.gulp.dest('build/css/'))
                 .on('end', $.bs.reload)
         );
-
-        // .pipe($.bs.reload({
-        //     stream:true
-        // }));
     });
 };
