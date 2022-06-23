@@ -1,19 +1,5 @@
 'use strict';
 
-/* Plugins
-********************
-gulp-load-plugins
-gulp-pug
-gulp-sass
-gulp-csso
-gulp-notify
-gulp-autoprefixer
-gulp-sourcemaps
-gulp-browserSync
-gulp-concat
-
-*/
-
 global.$ = {
     gulp: require('gulp'),
     gp: require('gulp-load-plugins')(),

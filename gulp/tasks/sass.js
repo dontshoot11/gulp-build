@@ -1,3 +1,5 @@
+const sass = require('gulp-sass')(require('sass'));
+
 module.exports = function () {
     $.gulp.task('sass', function () {
         return (
@@ -12,7 +14,7 @@ module.exports = function () {
                     })
                 )
                 // .pipe($.gp.csso())
-                .pipe($.gp.sass({ outputStyle: 'expanded' }))
+                .pipe(sass({ outputStyle: 'expanded' }))
                 .pipe(
                     $.gp.autoprefixer({
                         browsers: ['last 10 versions'],
@@ -21,7 +23,7 @@ module.exports = function () {
                 // .pipe($.gp.sourcemaps.write('./'))
                 .pipe($.gulp.dest('build/css/'))
                 // Минифицированная версия
-                .pipe($.gp.sass({ outputStyle: 'compressed' }))
+                .pipe(sass({ outputStyle: 'compressed' }))
                 .pipe($.gp.rename('main.min.css'))
                 .pipe($.gp.sourcemaps.write('./'))
                 .pipe($.gulp.dest('build/css/'))
