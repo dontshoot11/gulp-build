@@ -11,7 +11,7 @@ module.exports = function () {
                 'src/static/js/components/*.js',
                 'src/static/js/common/*.js',
             ],
-            $.gulp.series('concat', 'scripts', 'clean')
+            $.gulp.series('clean', 'concat', 'scripts', 'clean')
         );
         $.gulp.watch('src/static/img/*', $.gulp.series('img'));
         $.gulp.watch('src/static/fonts/*', $.gulp.series('fonts'));
