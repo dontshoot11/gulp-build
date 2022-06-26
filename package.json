@@ -43,6 +43,8 @@
     },
     "dependencies": {
         "@babel/runtime": "^7.18.3",
+        "acorn": "^8.7.1",
+        "browserslist": "^4.21.0",
         "core-js": "^2.6.12",
         "gulp-rename": "^1.4.0",
         "regenerator-runtime": "^0.13.9"
