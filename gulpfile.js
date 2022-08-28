@@ -15,7 +15,7 @@ $.path.tasks.forEach(function (taskPath) {
 });
 
 $.gulp.task(
-    'build',
+    'start',
     $.gulp.series(
         'initialClean',
         'pug',
@@ -28,5 +28,22 @@ $.gulp.task(
         'scripts',
         'clean',
         $.gulp.parallel('watch', 'serve')
+    )
+);
+
+$.gulp.task(
+    'prod',
+    $.gulp.series(
+        'initialClean',
+        'pug',
+        'sass',
+        'scripts:lib',
+        'img',
+        'fonts',
+        'svg',
+        'concat',
+        'scripts',
+        'clean',
+        'ver'
     )
 );

@@ -47,6 +47,8 @@
         "browserslist": "^4.21.0",
         "core-js": "^2.6.12",
         "gulp-rename": "^1.4.0",
+        "gulp-rev": "^9.0.0",
+        "gulp-rev-rewrite": "^5.0.0",
         "regenerator-runtime": "^0.13.9"
     },
     "browserslist": [
