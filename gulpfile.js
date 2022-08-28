@@ -17,7 +17,7 @@ $.path.tasks.forEach(function (taskPath) {
 $.gulp.task(
     'build',
     $.gulp.series(
-        'clean',
+        'initialClean',
         'pug',
         'sass',
         'scripts:lib',

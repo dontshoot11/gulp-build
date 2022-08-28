@@ -4,7 +4,6 @@ module.exports = function () {
         $.gulp.watch('src/static/css/*.scss', $.gulp.series('sass'));
         $.gulp.watch('src/static/css/common/*.scss', $.gulp.series('sass'));
         $.gulp.watch('src/static/css/components/*.scss', $.gulp.series('sass'));
-
         $.gulp.watch(
             [
                 'src/static/js/common.js',

@@ -44,4 +44,7 @@ module.exports = function () {
             'build/css/main.min.css.map',
         ]);
     });
+    $.gulp.task('initialClean', function () {
+        return del(['build']);
+    });
 };
