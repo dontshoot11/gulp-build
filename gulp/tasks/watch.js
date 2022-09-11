@@ -3,7 +3,6 @@ module.exports = function () {
         $.gulp.watch('src/pug/**/*.pug', $.gulp.series('pug'));
         $.gulp.watch('src/static/css/*.scss', $.gulp.series('sassDev'));
         $.gulp.watch('src/static/css/**/*.scss', $.gulp.series('sassDev'));
-
         $.gulp.watch(
             [
                 'src/static/js/common.js',

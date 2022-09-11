@@ -1,10 +1,10 @@
 module.exports = function () {
     const del = require('del');
     $.gulp.task('cleanJsDev', function () {
-        return del(['src/static/js/main.js']);
+        return del(['src/static/js/bundle.js']);
     });
     $.gulp.task('cleanJsProd', function () {
-        return del(['src/static/js/main.js', 'build/js/bundle.js']);
+        return del(['src/static/js/bundle.js', 'build/js/bundle.js']);
     });
     $.gulp.task('initialClean', function () {
         return del(['build']);

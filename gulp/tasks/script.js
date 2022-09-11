@@ -18,20 +18,20 @@ module.exports = function () {
     $.gulp.task('concat', function () {
         return $.gulp
             .src('src/static/js/**')
-            .pipe($.gp.concat('main.js'))
+            .pipe($.gp.concat('bundle.js'))
             .pipe($.gulp.dest('src/static/js/'));
     });
 
     $.gulp.task('scriptsDev', function () {
         return $.gulp
-            .src('src/static/js/main.js')
+            .src('src/static/js/bundle.js')
             .pipe($.gulp.dest('build/js'))
             .on('end', $.bs.reload);
     });
 
     $.gulp.task('scriptsProd', function () {
         return $.gulp
-            .src('src/static/js/main.js')
+            .src('src/static/js/bundle.js')
             .pipe(webpackStream(webpackConfig), webpack)
             .pipe(
                 minify({
