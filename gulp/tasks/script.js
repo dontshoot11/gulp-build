@@ -3,7 +3,6 @@ module.exports = function () {
     const webpackStream = require('webpack-stream');
     const webpackConfig = require('../../webpack.config');
     const minify = require('gulp-babel-minify');
-    const del = require('del');
 
     $.gulp.task('scripts:lib', function () {
         return $.gulp
@@ -23,7 +22,14 @@ module.exports = function () {
             .pipe($.gulp.dest('src/static/js/'));
     });
 
-    $.gulp.task('scripts', function () {
+    $.gulp.task('scriptsDev', function () {
+        return $.gulp
+            .src('src/static/js/main.js')
+            .pipe($.gulp.dest('build/js'))
+            .on('end', $.bs.reload);
+    });
+
+    $.gulp.task('scriptsProd', function () {
         return $.gulp
             .src('src/static/js/main.js')
             .pipe(webpackStream(webpackConfig), webpack)
@@ -34,17 +40,6 @@ module.exports = function () {
                     },
                 })
             )
-            .pipe($.gulp.dest('build/js'))
-            .on('end', $.bs.reload);
-    });
-    $.gulp.task('clean', function () {
-        return del([
-            'src/static/js/main.js',
-            'build/css/main.css',
-            'build/css/main.min.css.map',
-        ]);
-    });
-    $.gulp.task('initialClean', function () {
-        return del(['build']);
+            .pipe($.gulp.dest('build/js'));
     });
 };

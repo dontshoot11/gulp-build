@@ -15,18 +15,18 @@ $.path.tasks.forEach(function (taskPath) {
 });
 
 $.gulp.task(
-    'start',
+    'dev',
     $.gulp.series(
         'initialClean',
         'pug',
-        'sass',
+        'sassDev',
         'scripts:lib',
         'img',
         'fonts',
         'svg',
         'concat',
-        'scripts',
-        'clean',
+        'scriptsDev',
+        'cleanJsDev',
         $.gulp.parallel('watch', 'serve')
     )
 );
@@ -36,14 +36,15 @@ $.gulp.task(
     $.gulp.series(
         'initialClean',
         'pug',
-        'sass',
+        'sassProd',
         'scripts:lib',
         'img',
         'fonts',
         'svg',
         'concat',
-        'scripts',
-        'clean',
-        'ver'
+        'scriptsProd',
+        'ver',
+        'cleanJsProd',
+        'cleanStylesProd'
     )
 );
