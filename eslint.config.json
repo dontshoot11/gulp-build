@@ -1,18 +1,11 @@
 {
-    "extends": "standard",
+    "extends": "gulp",
     "globals": {
         "jQuery": true,
         "$": true,
         "window": true,
         "document": true,
-        "GTMClickHandler": true,
-        "GTMInit": true,
-        "dataLayerActtion": true,
-        "initViewportTimer": true,
-        "IntersectionObserver": true,
-        "userLoginHeader": true,
-        "smoothScroll": true,
-        "newDeepLink": true
+        "IntersectionObserver": true
     },
     "rules": {
         "node/no-unsupported-features/es-syntax": 0
