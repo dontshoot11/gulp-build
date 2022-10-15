@@ -8,4 +8,5 @@ module.exports = [
     './gulp/tasks/script',
     './gulp/tasks/clean',
     './gulp/tasks/ver',
+    './gulp/tasks/lint',
 ];

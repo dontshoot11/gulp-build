@@ -46,3 +46,5 @@ $.gulp.task(
         'cleanStylesProd'
     )
 );
+
+$.gulp.task('jsLint', $.gulp.series('jsLint'));
